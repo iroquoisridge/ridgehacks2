@@ -12,7 +12,6 @@
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css" type="text/css">
-
     <title>Ridge Hacks</title>
 
 </head>
@@ -46,11 +45,10 @@
                         <h1>Ridge Hacks</h1>
                         <h2>Local Hack Day @ <a target="_blank" href="https://www.google.ca/maps/place/Iroquois+Ridge+High+School/@43.48904,-79.699331,15z/data=!4m2!3m1!1s0x0:0x9a1b837376dd238?sa=X&ved=0ahUKEwiz_5Wz5-LPAhXMQD4KHdpBBoQQ_BIIbzAM">Iroquois Ridge High School</a></h2>
                         <h3>Saturday December 3rd, 2016</h3>
-                        <h3>9pm to 9am</h3>
+                        <h3>9am to 9pm</h3>
                         <br/>
-                        <a class="btn btn-primary btn-lg" target="_blank" href="http://click.mlh.io/wf/click?upn=4yZRlaYio1ZqHdzljlSW5mYECMeOWN3-2BlCcIwJUktEP1XeMQvA3EcIrXqLN8WWk10tAyGFKRZHN-2BPvdgPzpDrbtGFzU2KOdMGiKxEVP60LULJOfoOaCSFdBAQ5BcXd2f_SqVEZYI4zgX7WuxSUX-2FuDNTZ6l2F82RnBSlnDNeHplD7r9eQYc0KRwkgSKiGIb7kv6XCTLgs7eA39XyeWLpGE17KHeQ1on05lC91Zx3si-2Ffk0XApcY09e6GpF8pxWDUEKdGwKN5k97QDMmBI4M7Br3RAjVRF64FrixpZ1fWz5lKdHW3ZFONztq-2BSUhZhm7Lpxeq8uRdNA-2F16isLFtdbt7-2B1ac1fNcvmO-2B2tcyLT-2BXCc-3D"
-                            role="button">Attend</a>
-                        <a class="btn btn-primary btn-lg" href="#sponsor">Sponser</a>
+                        <a class="btn btn-primary btn-lg" href="#attend" role="button">Attend</a>
+                        <a class="btn btn-primary btn-lg" href="#sponsor" role="button">Sponser</a>
                     </div>
                 </div>
 
@@ -62,9 +60,9 @@
         <h1>About</h1><br/>
         <p>
             Ridge Hacks is a Local Hack Day organized by MLH and Iroquois Ridge High School, other schools all over the world will be simultaneously hosting their own Local Hack Day, resulting in the largest day of student hacking ever. A Local Hack Day is a 12 hour
-            event (similar to a hackathon) focused on learning computer science skills while creating cool projects. <a href="https://localhackday.mlh.io/">Learn more about Local Hack Day.</a><br/><br/> Ridge Hacks brings professionals and
-            mentors from the community to teach workshops on the latest technology, the workshop are beginner friendly and open to all. Whether you're a seasoned hackathon veteran or have never been to a hackathon before, Local Hack Day is the best way
-            to kick off the 2017 MLH Hackathon Season.
+            event (similar to a hackathon) focused on learning computer science skills while creating cool projects. <a target="_blank" href="https://localhackday.mlh.io/">Learn more about Local Hack Day.</a><br/><br/> Ridge Hacks brings professionals
+            and mentors from the community to teach workshops on the latest technology, the workshop are beginner friendly and open to all students. Ridge Hacks is for anyone who wants to learn more about computer science even if you have never been to
+            a hackathon before. Best of all, Ridge Hacks is completely free!
         </p><br/>
         <h3><a href="http://click.mlh.io/wf/click?upn=4yZRlaYio1ZqHdzljlSW5mYECMeOWN3-2BlCcIwJUktEP1XeMQvA3EcIrXqLN8WWk10tAyGFKRZHN-2BPvdgPzpDrbtGFzU2KOdMGiKxEVP60LULJOfoOaCSFdBAQ5BcXd2f_SqVEZYI4zgX7WuxSUX-2FuDNTZ6l2F82RnBSlnDNeHplD7r9eQYc0KRwkgSKiGIb7kv6XCTLgs7eA39XyeWLpGE17KHeQ1on05lC91Zx3si-2Ffk0XApcY09e6GpF8pxWDUEKdGwKN5k97QDMmBI4M7Br3RAjVRF64FrixpZ1fWz5lKdHW3ZFONztq-2BSUhZhm7Lpxeq8uRdNA-2F16isLFtdbt7-2B1ac1fNcvmO-2B2tcyLT-2BXCc-3D" >Come join your local computer science community on December 3rd.</a></h3>
     </section>
@@ -103,6 +101,25 @@
     <footer align="center">
         Ridge Hacks 2016 | Iroquois Ridge High School | 1123 Glenashton Drive, Oakville ON
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(function() {
+                $('a[href*="#"]:not([href="#"], #images a)').click(function() {
+                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 500);
+                            return false;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
