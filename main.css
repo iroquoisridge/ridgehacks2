@@ -2,7 +2,6 @@ body {
     font-family: "Lucida Console", Monaco, monospace;
 }
 
-
 #back {
     position: absolute;;
     filter: contrast(2);
@@ -75,12 +74,28 @@ hr {
 }
 
 section:not(#hero) {
-    padding:10rem 20rem;
+    padding:5rem 10rem;
     margin:0;
+}
 
+@media screen and (max-width:770px) {
+    section:not(#hero) {
+        padding:2rem;
+    }
+    .navbar li {
+        display:inline-block;;
+    }
+    #tree {
+        display:none;
+    }
 }
 
 footer {
     padding:7rem;
     opacity: .7;
+}
+
+#tree {
+    height:30%;
+    margin-right: 4vw;
 }
