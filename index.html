@@ -51,11 +51,10 @@
                         <a class="btn btn-primary btn-lg" href="#sponsor" role="button">Sponsor</a>
                     </div>
                 </div>
-
             </div>
         </div>
+        <a href="#about" id="down"><span align="center" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
     </section>
-
     <section id="about">
         <h1>About</h1><br/>
         <p>
@@ -71,7 +70,6 @@
         <h1>Attend</h1><br/>
         <p>
             Regestration is now open for Ridge Hacks! No application is required, spots will be given out on a first come first serve basis so sign up now.<br/><br/> Participants should arrive in teams of up to 4, the link below will let you register for Ridge Hacks through MLH, you should receive a confirmation email after registering.
-
         </p>
         <br/>
         <a class="btn btn-primary btn-lg" target="_blank" href="https://localhackday.mlh.io/register/?id=oakville-bc11e2fc-e1f8-4cf7-8937-ff2236683542"
@@ -79,6 +77,7 @@
     </section>
     <hr/>
     <section id="sponsor">
+        <br/>
         <h1>Sponsor</h1><br/>
         <p>Want to support Ridge Hacks and promote your business? Become a Ridge Hacks sponsor.</p>
         <br/>
@@ -90,7 +89,7 @@
         <h2>How much does it cost to attend?</h2>
         <p>Nothing! Ridge Hacks is completely free.</p><br/>
         <h2>What should I bring?</h2>
-        <p>A laptop, cables, charger are all that is needed. Stay tuned for information about food and drinks.</p><br/>
+        <p>A laptop, cables, charger are all that is needed. Food and drinks will be provided for the evening.</p><br/>
         <h2>Who can attend?</h2>
         <p>Any university, high school, or middle school student may attend Ridge Hacks. Members of a school's staff may attend but must also register.</p><br/>
         <h2>Do I need a team?</h2>
@@ -112,9 +111,11 @@
                     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                         var target = $(this.hash);
                         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        var navHeight = $('.navbar').height();
+                        console.log(navHeight);
                         if (target.length) {
                             $('html, body').animate({
-                                scrollTop: target.offset().top
+                                scrollTop: target.offset().top - navHeight
                             }, 500);
                             return false;
                         }

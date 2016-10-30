@@ -88,6 +88,10 @@ section:not(#hero) {
     #tree {
         display:none;
     }
+    .btn {
+        width:100%;
+        margin-top:20px;
+    }
 }
 
 footer {
@@ -96,6 +100,15 @@ footer {
 }
 
 #tree {
-    height:30%;
+    height:35vw;
     margin-right: 4vw;
+}
+
+#down {
+    opacity: .7;
+    position: absolute;;
+    top:87vh;
+    left:calc(50% - 40px);
+    z-index: 1001;
+    font-size: 80px;
 }
