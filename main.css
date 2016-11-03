@@ -2,6 +2,16 @@ body {
     font-family: Helvetica, sans-serif;;
 }
 
+.sponsor {
+    height:10vw;
+    margin:5rem;
+}
+
+table, td {
+    padding:2rem;
+    border: 1px solid grey;
+}
+
 #back {
     position:absolute;
     filter: contrast(2);
@@ -79,6 +89,9 @@ section:not(#hero) {
 @media screen and (max-width:770px) {
     #back {
         display: none;
+    }
+    .sponsor {
+        margin:3rem;
     }
     #hero {
         position: relative;
