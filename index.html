@@ -21,15 +21,24 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#hero">Ridge Hacks</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                     </button>
+                     <a class="navbar-brand" href="#hero">Ridge Hacks</a>
                 </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#attend">Attend</a></li>
-                    <li><a href="#sponsor">Sponsor</a></li>
-                    <li><a href="#questions">Questions</a></li>
-                    <li><a href="mailto:ridgehacks@gmail.com?Subject=Ridge%20Hacks">Contact</a></li>
-                </ul>
+                <div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#attend">Attend</a></li>
+                        <li><a href="#sponsor">Sponsor</a></li>
+                        <li><a href="#questions">Questions</a></li>
+                        <li><a href="mailto:ridgehacks@gmail.com?Subject=Ridge%20Hacks">Contact</a></li>
+                    </ul>
+                </div>
+
             </div>
         </nav>
     </header>
@@ -85,11 +94,11 @@
                 <td>Hacking Begins!</td>
             </tr>
             <tr>
-                <td>10:40pm - 11:20pm</td>
+                <td>10:40pm - 11:40pm</td>
                 <td>TU20 Technology in Entrepreneurship Workshop presented by TechUnder20</td>
             </tr>
             <tr>
-                <td>11:30am - 12:30pm</td>
+                <td>12:00am - 12:40pm</td>
                 <td>Lunch</td>
             </tr>
             <tr>
@@ -143,6 +152,7 @@
         <img class="sponsor" src="uoft.jpg"/>
         <img class="sponsor" src="cobs.jpg"/>
         <img class="sponsor" src="mandm.png"/>
+        <img class="sponsor" src="longos.jpg"/>
         <img class="sponsor" src="hackclub.png" style="height:5vw"/>
         <br/><br/>
         <p>Want to support Ridge Hacks and promote your business? Become a Ridge Hacks sponsor.</p>
@@ -170,9 +180,11 @@
         Ridge Hacks 2016 | Iroquois Ridge High School | 1123 Glenashton Drive, Oakville ON
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $('#back').height($('#hero').height());
+
             $(function() {
                 $('a[href*="#"]:not([href="#"], #images a)').click(function() {
                     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -180,9 +192,15 @@
                         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                         var navHeight = $('.navbar').height();
                         console.log(navHeight);
-                        if (target.length) {
+                        if (target.length && ( $('.navbar-toggle').css('display') == 'none' )) {
                             $('html, body').animate({
                                 scrollTop: target.offset().top - navHeight
+                            }, 500);
+                            return false;
+                        } else if (target.length) {
+                            $('.navbar-toggle').click();
+                            $('html, body').animate({
+                                scrollTop: target.offset().top - 80
                             }, 500);
                             return false;
                         }
