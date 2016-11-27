@@ -7,9 +7,22 @@ body {
     margin:5rem;
 }
 
-table, td {
+#info {
+    border:none;
+    width:100%;
+}
+
+#info table {
+    width:90%;
+}
+
+#info table, #info table td {
     padding:2rem;
     border: 1px solid grey;
+}
+
+#info_mobile {
+    display: none;
 }
 
 #back {
@@ -39,7 +52,7 @@ h1 {
     font-size: 4rem;
 }
 h2 {
-    font-size: 2.5rem;
+    font-size:3rem;
 }
 
 p {
@@ -81,12 +94,9 @@ hr {
 }
 
 .jumbotron {
-    background-color: rgba(33,150,243, .2);
-    padding-top:15rem;
-}
-
-.page-header {
-    padding-left:3rem;
+    padding-top:3rem;
+    height: 100%;
+    background-color: transparent;
 }
 
 section:not(#hero) {
@@ -107,12 +117,15 @@ section:not(#hero) {
     section:not(#hero) {
         padding:2rem;
     }
-    #tree {
-        display:none;
-    }
     .btn {
         width:100%;
         margin-top:20px;
+    }
+    #info_mobile {
+        display:block;
+    }
+    #info {
+        display:none;
     }
 }
 
@@ -122,8 +135,7 @@ footer {
 }
 
 #tree {
-    height:35vw;
-    margin-right: 4vw;
+    height:35vh;
 }
 
 #down {
